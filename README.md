@@ -160,3 +160,15 @@ Trained checkpoints have been uploaded to [google drive](https://drive.google.co
 [1]Wenxuan Zhou, Kevin Huang, Tengyu Ma, and Jing Huang. 2021. Document-level relation extraction with adaptive thresholding and localized context pool- ing. In Proceedings of the AAAI Conference on Arti- ficial Intelligence.
 [2]Yiqing Xie, Jiaming Shen, Sha Li, Yuning Mao, and Jiawei Han. 2022. Eider: Empowering document- level relation extraction with efficient evidence ex- traction and inference-stage fusion. In Findings of the Association for Computational Linguistics: ACL 2022, pages 257–268, Dublin, Ireland. Association for Computational Linguistics.
 ```
+
+
+
+
+```shell
+python run.py --data_dir dataset/docred --transformer_type bert --model_name_or_path bert-base-cased --display_name  zzz --load_path dreeam_models/bert_teacher_best.ckpt --eval_mode single --test_file DocRED-20230914T020957Z-001/DocRED/test.json --test_batch_size 8 --num_labels 4 --evi_thresh 0.2 --num_class 97
+```
+
+
+```shell
+python run.py --data_dir dataset/docred --transformer_type roberta --model_name_or_path roberta-large   --display_name  zzz --load_path dreeam_models/roberta_student_best.ckpt --eval_mode single --test_file DocRED-20230914T020957Z-001/DocRED/test.json --test_batch_size 8 --num_labels 4 --evi_thresh 0.2 --num_class 97
+```
